@@ -1,0 +1,6 @@
+{
+  "name": "EquiLiving – Global Purchasing Power & Demographic Visualizer",
+  "description": "Multilingual interactive Micro-SaaS tool for comparing purchasing power parity, demographic dividends, retirement horizons, and remote freelance salaries across global economies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
