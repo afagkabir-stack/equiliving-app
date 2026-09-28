@@ -121,7 +121,7 @@ export const PurchasingPowerCalculator: React.FC<Props> = ({ showAdSlots }) => {
         </div>
 
         {/* Live Data Badge */}
-        <div className="flex items-center gap-2 self-start sm:self-auto shrink-0 bg-white border border-slate-200 rounded-xl px-3 py-1.5 shadow-xs">
+        <div id="tour-live-api" className="flex items-center gap-2 self-start sm:self-auto shrink-0 bg-white border border-slate-200 rounded-xl px-3 py-1.5 shadow-xs">
           <Radio className={`h-3.5 w-3.5 ${sourceLive?.isLive || targetLive?.isLive ? 'text-emerald-500 animate-pulse' : 'text-slate-400'}`} />
           <div className="text-[11px] leading-tight text-left">
             <div className="font-semibold text-slate-800 flex items-center gap-1">
@@ -136,7 +136,7 @@ export const PurchasingPowerCalculator: React.FC<Props> = ({ showAdSlots }) => {
       </div>
 
       {/* Quick Presets */}
-      <div>
+      <div id="tour-presets">
         <div className="flex items-center justify-between mb-2">
           <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
             {t.common.presets}
@@ -156,7 +156,7 @@ export const PurchasingPowerCalculator: React.FC<Props> = ({ showAdSlots }) => {
       </div>
 
       {/* Input Configuration Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs">
+      <div id="tour-country-inputs" className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs">
         {/* Origin Country */}
         <div className="lg:col-span-4 space-y-2">
           <label htmlFor={sourceCountrySelectId} className="block text-xs font-semibold text-slate-700 uppercase tracking-wide">
@@ -258,7 +258,7 @@ export const PurchasingPowerCalculator: React.FC<Props> = ({ showAdSlots }) => {
       )}
 
       {/* Primary Result Headline Card */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div id="tour-equivalent-salary" className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {/* Equivalent Target Salary Card */}
         <div className="md:col-span-2 rounded-2xl bg-gradient-to-br from-indigo-900 via-slate-900 to-indigo-950 p-6 text-white shadow-md relative overflow-hidden">
           <div className="relative z-10 flex flex-col justify-between h-full space-y-4">
@@ -349,7 +349,7 @@ export const PurchasingPowerCalculator: React.FC<Props> = ({ showAdSlots }) => {
       />
 
       {/* Living Cost Category Breakdowns Grid */}
-      <div>
+      <div id="tour-cost-breakdown">
         <h2 className="text-base font-bold text-slate-900 mb-4">
           Key Living Cost Index Differentials
         </h2>
@@ -416,7 +416,7 @@ export const PurchasingPowerCalculator: React.FC<Props> = ({ showAdSlots }) => {
       </div>
 
       {/* Inflation Erosion Trajectory Section */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs">
+      <div id="tour-inflation-projection" className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
           <div>
             <h2 className="text-base font-bold text-slate-900">

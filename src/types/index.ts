@@ -1,4 +1,4 @@
-export type LanguageCode = 'en' | 'es' | 'ja' | 'id' | 'bn';
+export type LanguageCode = 'ar' | 'en' | 'es' | 'ja' | 'id' | 'bn';
 
 export interface CountryData {
   id: string;

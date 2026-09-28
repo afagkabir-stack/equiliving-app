@@ -109,7 +109,7 @@ export const DemographicVisualizer: React.FC<Props> = ({ showAdSlots }) => {
       </div>
 
       {/* Controls Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs">
+      <div id="tour-demo-controls" className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-xs">
         {/* Country Selector */}
         <div className="space-y-2">
           <label htmlFor={countrySelectId} className="block text-xs font-semibold text-slate-700 uppercase tracking-wide">
@@ -187,7 +187,7 @@ export const DemographicVisualizer: React.FC<Props> = ({ showAdSlots }) => {
       </div>
 
       {/* Longevity & Timeline Horizon Bar */}
-      <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-xs">
+      <div id="tour-demo-longevity" className="rounded-2xl bg-white border border-slate-200 p-6 shadow-xs">
         <h2 className="text-base font-bold text-slate-900 mb-2">
           Personal Longevity & Working Timeline
         </h2>
@@ -234,7 +234,7 @@ export const DemographicVisualizer: React.FC<Props> = ({ showAdSlots }) => {
       {/* Demographic Indicators Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {/* National Demographic Phase */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs flex flex-col justify-between">
+        <div id="tour-demo-phase" className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-slate-500">
               <span className="text-xs font-semibold uppercase tracking-wider">{t.tool2.dividendStatusTitle}</span>
@@ -254,7 +254,7 @@ export const DemographicVisualizer: React.FC<Props> = ({ showAdSlots }) => {
         </div>
 
         {/* Dependency Ratio Shift */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs flex flex-col justify-between">
+        <div id="tour-demo-dependency" className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-slate-500">
               <span className="text-xs font-semibold uppercase tracking-wider">{t.tool2.dependencyRatioNow}</span>
@@ -282,7 +282,7 @@ export const DemographicVisualizer: React.FC<Props> = ({ showAdSlots }) => {
         </div>
 
         {/* State Pension Strain & Replacement Rate */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs flex flex-col justify-between">
+        <div id="tour-demo-pension" className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between text-slate-500">
               <span className="text-xs font-semibold uppercase tracking-wider">{t.tool2.pensionStrainTitle}</span>

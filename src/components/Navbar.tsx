@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useI18n, LANGUAGE_OPTIONS } from '../i18n';
 import { LanguageCode } from '../types';
-import { Globe, Eye, EyeOff, ChevronDown, Check } from 'lucide-react';
+import { Globe, Eye, EyeOff, ChevronDown, Check, Compass } from 'lucide-react';
 
 interface NavbarProps {
   activeTab: 'calculator' | 'demographics' | 'freelance';
@@ -9,6 +9,7 @@ interface NavbarProps {
   onOpenMethodology: () => void;
   showAdSlots: boolean;
   setShowAdSlots: React.Dispatch<React.SetStateAction<boolean>>;
+  onStartTour?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -17,8 +18,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenMethodology,
   showAdSlots,
   setShowAdSlots,
+  onStartTour,
 }) => {
-  const { language, setLanguage, t } = useI18n();
+  const { language, setLanguage, t, isRtl } = useI18n();
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -50,7 +52,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </a>
 
         {/* Zone 2: 4-6 text navigation links */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <nav id="tour-nav-tabs" className="hidden md:flex items-center gap-6 text-sm font-medium">
           <button
             onClick={() => setActiveTab('calculator')}
             className={`transition-colors whitespace-nowrap ${
@@ -94,6 +96,20 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Zone 3: 1-2 primary actions */}
         <div className="flex items-center gap-2.5">
+          {/* Guided Tour Walkthrough Button */}
+          {onStartTour && (
+            <button
+              id="tour-start-btn"
+              onClick={onStartTour}
+              title={t.tour.startTourBtn}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200 hover:bg-indigo-100 hover:border-indigo-300 transition-colors shadow-2xs whitespace-nowrap cursor-pointer"
+            >
+              <Compass className="h-3.5 w-3.5 text-indigo-600" />
+              <span className="hidden sm:inline">{t.tour.startTourBtn}</span>
+              <span className="sm:hidden">{isRtl ? 'جولة' : 'Tour'}</span>
+            </button>
+          )}
+
           {/* AdSense slots toggle preview */}
           <button
             onClick={() => setShowAdSlots((prev) => !prev)}
@@ -123,9 +139,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             {langMenuOpen && (
-              <div className="absolute right-0 mt-1.5 w-52 rounded-xl bg-white border border-slate-200 shadow-xl py-1 z-50 animate-in fade-in zoom-in-95 duration-100">
-                <div className="px-3 py-1.5 text-[11px] font-semibold text-slate-600 uppercase tracking-wider border-b border-slate-100">
-                  Select Language / Sprache
+              <div className={`absolute ${isRtl ? 'left-0' : 'right-0'} mt-1.5 w-52 rounded-xl bg-white border border-slate-200 shadow-xl py-1 z-50 animate-in fade-in zoom-in-95 duration-100`}>
+                <div className="px-3 py-1.5 text-[11px] font-semibold text-slate-600 uppercase tracking-wider border-b border-slate-100 text-start">
+                  Select Language / اللغة
                 </div>
                 {LANGUAGE_OPTIONS.map((item) => (
                   <button
@@ -134,7 +150,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       setLanguage(item.code as LanguageCode);
                       setLangMenuOpen(false);
                     }}
-                    className={`flex items-center justify-between w-full px-3 py-2 text-xs text-left transition-colors ${
+                    className={`flex items-center justify-between w-full px-3 py-2 text-xs text-start transition-colors cursor-pointer ${
                       language === item.code
                         ? 'bg-indigo-50 text-indigo-900 font-semibold'
                         : 'text-slate-700 hover:bg-slate-50'

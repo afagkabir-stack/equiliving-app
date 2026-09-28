@@ -127,4 +127,53 @@ export interface TranslationSchema {
     sidebarNotice: string;
     cpmInfo: string;
   };
+  developer: {
+    title: string;
+    name: string;
+    role: string;
+    bio: string;
+    whatsapp: string;
+    email: string;
+    contactMe: string;
+    connectWithMe: string;
+  };
+  legal: {
+    aboutTitle: string;
+    aboutDesc: string;
+    privacyTitle: string;
+    privacyDesc: string;
+    termsTitle: string;
+    termsDesc: string;
+    disclaimerTitle: string;
+  };
+  tour: {
+    startTourBtn: string;
+    next: string;
+    prev: string;
+    done: string;
+    stepPresetsTitle: string;
+    stepPresetsDesc: string;
+    stepInputsTitle: string;
+    stepInputsDesc: string;
+    stepLiveApiTitle: string;
+    stepLiveApiDesc: string;
+    stepEquivalentTitle: string;
+    stepEquivalentDesc: string;
+    stepChartTitle: string;
+    stepChartDesc: string;
+    stepInflationTitle: string;
+    stepInflationDesc: string;
+    stepTabsTitle: string;
+    stepTabsDesc: string;
+    stepDemoControlsTitle: string;
+    stepDemoControlsDesc: string;
+    stepDemoLongevityTitle: string;
+    stepDemoLongevityDesc: string;
+    stepDemoPhaseTitle: string;
+    stepDemoPhaseDesc: string;
+    stepDemoDependencyTitle: string;
+    stepDemoDependencyDesc: string;
+    stepDemoPensionTitle: string;
+    stepDemoPensionDesc: string;
+  };
 }

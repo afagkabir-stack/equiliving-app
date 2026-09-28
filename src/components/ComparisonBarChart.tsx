@@ -163,7 +163,7 @@ export const ComparisonBarChart: React.FC<Props> = ({
   };
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xs">
+    <div id="tour-comparison-chart" className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xs">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
         <div>
           <h3 className="text-base font-bold text-slate-900">
